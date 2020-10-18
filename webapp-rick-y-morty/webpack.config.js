@@ -1,6 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+//const dotenv = require('dotenv');
+
+/*dotenv.config({
+    path: path.join(__dirname, '.env')
+});*/
+
+const HOST = process.env.HOST || '0.0.0.0';
+const PORT = process.env.PORT || 8080;
 
 module.exports = {
     entry: './src/frontend/index.js',
@@ -10,6 +18,11 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js', '.jsx'],
+    },
+    devServer: {
+        disableHostCheck: true,
+        host: HOST,
+        port: PORT,
     },
     module: {
         rules: [

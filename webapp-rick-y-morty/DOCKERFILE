@@ -10,6 +10,12 @@ USER node
 
 COPY --chown=node:node . .
 
-EXPOSE 8080
+ENV PORT=8080
 
-CMD ["npm", "run", "start:dev"]
+ENV HOST=0.0.0.0
+
+ENV API_URL=https://rickandmortyapi.com/api/character
+
+EXPOSE ${PORT}
+
+CMD ["PORT=$PORT HOST=$HOST API_URL=$API_URL npm", "run", "start:dev"]

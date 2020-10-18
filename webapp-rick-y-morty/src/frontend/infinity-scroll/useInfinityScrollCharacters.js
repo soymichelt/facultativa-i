@@ -15,12 +15,14 @@ const mergeData = (currentData, newData) => {
     return currentData;
 };
 
+const API_URL = process.env.API_URL || 'https://rickandmortyapi.com/api/character';
+
 export const useInfinityScrollCharacters = (
     elementToObserveRef,
     charactersRef
 ) => {
     const [isShowing] = useScreenHook(elementToObserveRef, '0px');
-    const [state, loading] = useDataProvider('https://rickandmortyapi.com/api/character');
+    const [state, loading] = useDataProvider(API_URL);
     const {
         statusData,
         data,
