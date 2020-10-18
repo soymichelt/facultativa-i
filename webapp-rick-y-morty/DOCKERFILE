@@ -16,6 +16,6 @@ ENV HOST="0.0.0.0"
 
 ENV API_URL="https://rickandmortyapi.com/api/character"
 
-EXPOSE ${PORT}
+RUN /bin/bash -c 'PORT=$PORT HOST=$HOST API_URL=$API_URL npm run start:dev'
 
-CMD ["PORT=$PORT HOST=$HOST API_URL=$API_URL npm", "run", "start:dev"]
+EXPOSE ${PORT}
