@@ -12,9 +12,9 @@ COPY --chown=node:node . .
 
 ENV PORT=8080
 
-ENV HOST=0.0.0.0
+ENV HOST="0.0.0.0"
 
-ENV API_URL=https://rickandmortyapi.com/api/character
+ENV API_URL="https://rickandmortyapi.com/api/character"
 
 EXPOSE ${PORT}
 
