@@ -8,7 +8,12 @@ const HOST = '0.0.0.0';
 // App de express
 const app = express();
 app.get('/personajes', (req, res) => {
-    axios.get('https://rickandmortyapi.com/api/character')
+    let params = '';
+    const page = req.params['page'];
+    if(page) {
+        params = `?page=${page}`;
+    }
+    axios.get(`https://rickandmortyapi.com/api/character/${params}`)
     .then((response) => res.json(response.data.results))
     .catch(error => console.log("Hay un error: ", error));
 });
