@@ -40,6 +40,7 @@ export const useDataProvider = (initialUrl) => {
 
     useEffect(() => {
         if(statusData === LOADING && url) {
+            console.log(`Petición a la URL: ${url}`);
             fetch(url)
             .then(res => res.json())
             .then(data => dispatch({
