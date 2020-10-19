@@ -9,7 +9,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "start:prod": "NODE_OPTIONS=--max-http-header-size=2000000 webpack-dev-server --mode production",
-    "start:dev": "NODE_OPTIONS=--max-http-header-size=2000000 webpack-dev-server --hot --open",
+    "start:dev": "NODE_OPTIONS=--max-http-header-size=2000000 webpack-dev-server --inline",
     "test": "jest"
   },
   "keywords": [
