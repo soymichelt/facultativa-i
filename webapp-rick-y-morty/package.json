@@ -8,8 +8,8 @@
   },
   "scripts": {
     "build": "webpack --mode production",
-    "start:prod": "cross-env NODE_OPTIONS=--max-http-header-size=1000000 webpack-dev-server --mode production",
-    "start:dev": "cross-env NODE_OPTIONS=--max-http-header-size=1000000 webpack-dev-server",
+    "start:prod": "./node_modules/.bin/cross-env NODE_OPTIONS=--max-http-header-size=1000000 webpack-dev-server --mode production",
+    "start:dev": "./node_modules/.bin/cross-env NODE_OPTIONS=--max-http-header-size=1000000 webpack-dev-server",
     "test": "jest"
   },
   "keywords": [
