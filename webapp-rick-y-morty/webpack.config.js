@@ -23,6 +23,14 @@ module.exports = {
         disableHostCheck: true,
         host: HOST,
         port: PORT,
+        proxy: {
+            '/*': {
+                secure: false,
+                changeOrigin: true,
+                proxyTimeout: 1000 * 60 * 10, // 10 minutos
+                timeout: 1000 * 60 * 10, // 10 minutos
+            },
+        },
     },
     module: {
         rules: [
