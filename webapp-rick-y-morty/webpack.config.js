@@ -72,7 +72,7 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'assets/css/app.css',
         }),
-        webpack.DefinePlugin({
+        new webpack.DefinePlugin({
             'process.env.URL_API': JSON.stringify(process.env.URL_API),
         }),
     ],
