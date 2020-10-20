@@ -2,7 +2,7 @@ import React, {useState, useEffect,} from 'react';
 import {List} from './list';
 
 export const Characters = () => {
-    const url = process.env['API_URL'];
+    const url = process.env.URL_API;
     const [characterData, setCharactersData] = useState([]);
     
     useEffect(() => {
