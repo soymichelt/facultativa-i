@@ -1,5 +1,6 @@
 const express = require('express');
 const axios = require('axios');
+const cors = require('cors');
 
 // Puerto y host
 const PORT = 8080;
@@ -7,6 +8,7 @@ const HOST = '0.0.0.0';
 
 // App de express
 const app = express();
+app.use(cors());
 app.get('/personajes/', (req, res) => {
     let params = '';
     const page = req.query.page;
