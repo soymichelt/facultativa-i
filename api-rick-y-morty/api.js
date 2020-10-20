@@ -3,7 +3,7 @@ const axios = require('axios');
 
 // Puerto y host
 const PORT = 8080;
-const HOST = 'localhost';
+const HOST = '0.0.0.0';
 
 // App de express
 const app = express();
