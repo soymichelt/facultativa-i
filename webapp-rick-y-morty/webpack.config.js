@@ -1,11 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-//const dotenv = require('dotenv');
+const dotenv = require('dotenv');
+const webpack = require('webpack');
 
-/*dotenv.config({
-    path: path.join(__dirname, '.env')
-});*/
+dotenv.config();
 
 const HOST = process.env.HOST || '0.0.0.0';
 const PORT = process.env.PORT || 8080;
@@ -72,6 +71,9 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: 'assets/css/app.css',
+        }),
+        webpack.DefinePlugin({
+            'process.env.URL_API': JSON.stringify(process.env.URL_API),
         }),
     ],
 };
