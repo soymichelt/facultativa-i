@@ -7,7 +7,10 @@ export const Characters = () => {
     
     useEffect(() => {
         console.log(url);
-        fetch(url)
+        fetch(url, {
+            headers: {'Content-Type': 'application/json'},
+            mode: 'no-cors',
+        })
         .then(res => res.json())
         .then(data => {
             setCharactersData(data.results);
