@@ -2,9 +2,11 @@ import React, {useState, useEffect,} from 'react';
 import {List} from './list';
 
 export const Characters = () => {
+    const url = process.env.API_URL || 'https://rickandmortyapi.com/api/character';
     const [characterData, setCharactersData] = useState([]);
     
     useEffect(() => {
+        console.log(url);
         fetch(url)
         .then(res => res.json())
         .then(data => {
