@@ -14,7 +14,7 @@ ENV PORT=8080
 
 ENV HOST="0.0.0.0"
 
-ENV API_URL="https://rickandmortyapi.com/api/character"
+ENV API_URL="172.16.0.2:8080"
 
 EXPOSE ${PORT}
 
