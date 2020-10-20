@@ -2,7 +2,7 @@ import React, {useState, useEffect,} from 'react';
 import {List} from './list';
 
 export const Characters = () => {
-    const url = process.env.API_URL || 'https://rickandmortyapi.com/api/character';
+    const url = process.env.API_URL || '172.19.0.2:8080';
     const [characterData, setCharactersData] = useState([]);
     
     useEffect(() => {
