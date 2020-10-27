@@ -14,13 +14,12 @@ app.get('/', (req, res) => {
     axios.get(`${URL_API}`)
     .then((response) => {
         res.set('Content-type', 'text/html');
-        console.log(response.data);
         res.send(html(response.data.results));
     })
     .catch(error => console.log("Hay un error: ", error));
 });
 
-const html = (listData) => {
+function html(listData) {
     return (`
         <!DOCTYPE html>
         <html lang="en">
@@ -86,23 +85,22 @@ const html = (listData) => {
     `);
 };
 
-const htmlList = (listData) => {
+function htmlList (listData) {
+    console.log(listData);
     let htmlListText = '';
-    if(listData) {
-        listData.forEach(item => {
-            htmlListText = htmlListText + `
-                <article class='character'>
-                    <header class='character-header'>
-                        <h1>${item.name}</h1>
-                        <p>${item.species}</p>
-                    </header>
-                    <section class='character-resource'>
-                        <img src="${item.image}" />
-                    </section>
-                </article>
-            `;
-        });
-    }
+    listData.forEach(item => {
+        htmlListText = htmlListText + `
+            <article class='character'>
+                <header class='character-header'>
+                    <h1>${item.name}</h1>
+                    <p>${item.species}</p>
+                </header>
+                <section class='character-resource'>
+                    <img src="${item.image}" />
+                </section>
+            </article>
+        `;
+    });
     return htmlListText;
 };
 
