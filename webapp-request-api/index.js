@@ -14,6 +14,7 @@ app.get('/', (req, res) => {
     axios.get(`${URL_API}`)
     .then((response) => {
         res.set('Content-type', 'text/html');
+        console.log(response.data);
         res.send(html(response.data.results));
     })
     .catch(error => console.log("Hay un error: ", error));
