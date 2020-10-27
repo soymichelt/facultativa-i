@@ -13,6 +13,12 @@ RUN npm install
 # Copiamos los archivos de nuestra app
 COPY . .
 
+ENV PORT=8080
+
+ENV HOST="0.0.0.0"
+
+ENV URL_API="https://rickandmortyapi.com/api/character/"
+
 #Exponemos el puerto 8080
 EXPOSE 8080
 

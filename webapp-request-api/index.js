@@ -13,6 +13,7 @@ app.use(cors());
 app.get('/', (req, res) => {
     axios.get(`${URL_API}`)
     .then((response) => {
+        console.log("AXIOS: ", response.data.results);
         res.set('Content-type', 'text/html');
         res.send(html(response.data.results));
     })
@@ -20,6 +21,7 @@ app.get('/', (req, res) => {
 });
 
 function html(listData) {
+    console.log("HTML: ", listData);
     return (`
         <!DOCTYPE html>
         <html lang="en">
@@ -86,21 +88,23 @@ function html(listData) {
 };
 
 function htmlList (listData) {
-    console.log(listData);
+    console.log("HTML LIST: ", listData);
     let htmlListText = '';
-    listData.forEach(item => {
-        htmlListText = htmlListText + `
-            <article class='character'>
-                <header class='character-header'>
-                    <h1>${item.name}</h1>
-                    <p>${item.species}</p>
-                </header>
-                <section class='character-resource'>
-                    <img src="${item.image}" />
-                </section>
-            </article>
-        `;
-    });
+    if(listData) {
+        listData.forEach(item => {
+            htmlListText = htmlListText + `
+                <article class='character'>
+                    <header class='character-header'>
+                        <h1>${item.name}</h1>
+                        <p>${item.species}</p>
+                    </header>
+                    <section class='character-resource'>
+                        <img src="${item.image}" />
+                    </section>
+                </article>
+            `;
+        });
+    }
     return htmlListText;
 };
 
