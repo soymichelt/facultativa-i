@@ -4,7 +4,7 @@ const cors = require('cors');
 
 // Puerto y host
 const PORT = process.env.PORT || 8080;
-const HOST = process.env.HOST || 'localhost';
+const HOST = process.env.HOST || '0.0.0.0';
 const URL_API = process.env.URL_API || 'https://rickandmortyapi.com/api/character/';
 
 // App de express
@@ -106,4 +106,4 @@ const htmlList = (listData) => {
 };
 
 app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+console.log(`Running on http://${HOST}:${PORT} with URL API=${URL_API}`);
