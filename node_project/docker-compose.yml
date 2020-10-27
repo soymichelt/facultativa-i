@@ -45,7 +45,7 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /views/
+      device: $pwd/views/
       o: bind
 
 networks:
