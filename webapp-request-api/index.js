@@ -11,7 +11,7 @@ const URL_API = process.env.URL_API;
 const app = express();
 app.use(cors());
 app.get('/', (req, res) => {
-    axios.get(`${URL_API}/personajes`)
+    axios.get(`http://${URL_API}/personajes`)
     .then((response) => {
         console.log("AXIOS: ", response.data);
         res.set('Content-type', 'text/html');
