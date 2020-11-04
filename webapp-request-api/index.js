@@ -5,13 +5,13 @@ const cors = require('cors');
 // Puerto y host
 const PORT = process.env.PORT || 8080;
 const HOST = process.env.HOST || '0.0.0.0';
-const URL_API = process.env.URL_API || 'https://rickandmortyapi.com/api/character/';
+const URL_API = process.env.URL_API;
 
 // App de express
 const app = express();
 app.use(cors());
 app.get('/', (req, res) => {
-    axios.get(`${URL_API}`)
+    axios.get(`${URL_API}/personajes`)
     .then((response) => {
         console.log("AXIOS: ", response.data);
         res.set('Content-type', 'text/html');
